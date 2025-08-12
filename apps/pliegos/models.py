@@ -3,24 +3,20 @@ from django.conf import settings
 import uuid
 
 class Pliego(models.Model):
-    TIPO_CONTRATO_CHOICES = [
-        ('OBRA', 'Obra Pública'),
-        ('SERVICIO', 'Servicio'),
-        ('SUMINISTRO', 'Suministro'),
-    ]
-    
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    titulo = models.CharField(max_length=512)
-    tipo_contrato = models.CharField(max_length=20, choices=TIPO_CONTRATO_CHOICES)
+    titulo = models.CharField(max_length=512, default='Pliego')
     archivo = models.FileField(upload_to='pliegos/')
-    fecha_publicacion = models.DateField()
-    fecha_cierre = models.DateField()
-    requisitos_tecnicos = models.JSONField(default=list)
-    documentos_obligatorios = models.JSONField(default=list)
-    criterios_evaluacion = models.JSONField(default=dict)
-    publicado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
-    fecha_creacion = models.DateTimeField(auto_now_add=True)
-    vigente = models.BooleanField(default=True)
+    fecha_subida = models.DateTimeField(auto_now_add=True)
+    subido_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
+    
+    # Campos que serán llenados por IA
+    tipo_contrato = models.CharField(max_length=50, blank=True)
+    fecha_publicacion = models.DateField(null=True, blank=True)
+    fecha_cierre = models.DateField(null=True, blank=True)
+    requisitos_tecnicos = models.JSONField(default=list, blank=True)
+    documentos_obligatorios = models.JSONField(default=list, blank=True)
+    criterios_evaluacion = models.JSONField(default=dict, blank=True)
+    metadata_pliego = models.JSONField(default=dict, blank=True)
 
     def __str__(self):
-        return f"{self.titulo} ({self.get_tipo_contrato_display()})"
+        return self.titulo

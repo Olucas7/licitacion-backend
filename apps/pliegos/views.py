@@ -1,39 +1,36 @@
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
 from .models import Pliego
-from .serializers import PliegoSerializer, PliegoCreateSerializer
-from apps.documents.serializers import DocumentoSerializer
+from .serializers import PliegoSerializer
+from tasks.pliego_tasks import procesar_pliego_async
 
 class PliegoViewSet(viewsets.ModelViewSet):
     queryset = Pliego.objects.all()
-    permission_classes = [IsAuthenticated]
-    
-    def get_serializer_class(self):
-        if self.action in ['create', 'update']:
-            return PliegoCreateSerializer
-        return PliegoSerializer
+    serializer_class = PliegoSerializer
     
     def perform_create(self, serializer):
-        serializer.save(publicado_por=self.request.user)
+        pliego = serializer.save(subido_por=self.request.user)
+        import pdb; pdb.set_trace()
+        procesar_pliego_async.delay(str(pliego.id))
     
     @action(detail=True, methods=['post'])
     def subir_documentos(self, request, pk=None):
+        import pdb; pdb.set_trace()
         pliego = self.get_object()
         archivos = request.FILES.getlist('archivos')
         
-        documentos_creados = []
+        documentos = []
         for archivo in archivos:
-            documento = pliego.documentos.create(
+            doc = pliego.documentos.create(
                 archivo=archivo,
                 nombre_original=archivo.name
             )
-            documentos_creados.append(documento)
-            from tasks.analisis_tasks import analizar_documento_pliego
-            analizar_documento_pliego.delay(str(documento.id))
+            documentos.append(doc)
+            from tasks.documento_tasks import analizar_documento_async
+            analizar_documento_async.delay(str(doc.id))
         
         return Response({
-            'mensaje': f'{len(documentos_creados)} documentos subidos para análisis',
-            'documentos': DocumentoSerializer(documentos_creados, many=True).data
+            'mensaje': f'{len(documentos)} documentos subidos para análisis',
+            'documentos': documentos
         }, status=status.HTTP_201_CREATED)

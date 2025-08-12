@@ -83,13 +83,13 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("POSTGRES_DB", "procdb"),
-        "USER": os.getenv("POSTGRES_USER", "procuser"),
-        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "procpass"),
-        "HOST": os.getenv("POSTGRES_HOST", "db"),
-        "PORT": 5432,
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'licitacion_db',
+        'USER': 'licitacion_user',
+        'PASSWORD': 'licitacion_pass',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -97,7 +97,9 @@ DATABASES = {
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_BUCKET")
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # OpenAI
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
