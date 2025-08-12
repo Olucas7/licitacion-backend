@@ -83,13 +83,13 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'licitacion_db',
-        'USER': 'licitacion_user',
-        'PASSWORD': 'licitacion_pass',
-        'HOST': 'localhost',
-        'PORT': '5432',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("POSTGRES_DB", "procdb"),
+        "USER": os.getenv("POSTGRES_USER", "procuser"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "procpass"),
+        "HOST": os.getenv("POSTGRES_HOST", "db"),
+        "PORT": 5432,
     }
 }
 

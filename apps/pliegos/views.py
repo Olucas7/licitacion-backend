@@ -11,12 +11,10 @@ class PliegoViewSet(viewsets.ModelViewSet):
     
     def perform_create(self, serializer):
         pliego = serializer.save(subido_por=self.request.user)
-        import pdb; pdb.set_trace()
         procesar_pliego_async.delay(str(pliego.id))
     
     @action(detail=True, methods=['post'])
     def subir_documentos(self, request, pk=None):
-        import pdb; pdb.set_trace()
         pliego = self.get_object()
         archivos = request.FILES.getlist('archivos')
         
