@@ -1,0 +1,406 @@
+INFO 2025-08-10 22:09:07,279 autoreload 28305 8457068736 Watching for file changes with StatReloader
+INFO 2025-08-10 22:09:20,836 basehttp 28305 6164639744 "GET /api/pliegos/ HTTP/1.1" 200 442
+INFO 2025-08-10 22:09:50,597 autoreload 28305 8457068736 /Users/oscarlucas/Documents/Proyecto_Licitacion/licitacion-backend/apps/documents/serializers.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2025 - 22:09:07
+Django version 4.2.23, using settings 'backend.settings_local'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+INFO 2025-08-10 22:09:50,852 autoreload 28712 8457068736 Watching for file changes with StatReloader
+INFO 2025-08-11 01:59:44,150 basehttp 28712 6204338176 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4181
+INFO 2025-08-11 01:59:44,164 basehttp 28712 6204338176 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-08-11 01:59:44,164 basehttp 28712 6237990912 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-08-11 01:59:44,164 basehttp 28712 6254817280 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-08-11 01:59:44,165 basehttp 28712 6221164544 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-08-11 01:59:44,166 basehttp 28712 6237990912 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-08-11 01:59:44,166 basehttp 28712 6271643648 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-08-11 01:59:44,166 basehttp 28712 6288470016 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-08-11 01:59:53,779 basehttp 28712 6288470016 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4352
+INFO 2025-08-11 02:00:02,733 basehttp 28712 6288470016 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4352
+INFO 2025-08-11 02:00:14,638 basehttp 28712 6288470016 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4352
+INFO 2025-08-11 02:00:22,878 basehttp 28712 6288470016 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-08-11 02:00:22,886 basehttp 28712 6288470016 "GET /admin/ HTTP/1.1" 200 5157
+INFO 2025-08-11 02:00:22,904 basehttp 28712 6288470016 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-08-11 02:00:22,907 basehttp 28712 6288470016 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-08-11 02:00:22,907 basehttp 28712 6237990912 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+ERROR 2025-08-11 02:14:39,684 log 28712 6204338176 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/views.py", line 48, in handle_exception
+    return super().handle_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/views.py", line 37, in get
+    schema = self.schema_generator.get_schema(request, self.public)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/coreapi.py", line 158, in get_schema
+    links = self.get_links(None if public else request)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/coreapi.py", line 145, in get_links
+    link = view.schema.get_link(path, method, base_url=self.url)
+AttributeError: 'AutoSchema' object has no attribute 'get_link'
+ERROR 2025-08-11 02:14:39,689 basehttp 28712 6204338176 "GET /api/docs/ HTTP/1.1" 500 116388
+INFO 2025-08-11 02:15:06,734 basehttp 28712 6204338176 "GET /api/ HTTP/1.1" 200 5303
+INFO 2025-08-11 02:15:06,751 basehttp 28712 6204338176 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2025-08-11 02:15:06,751 basehttp 28712 6221164544 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-08-11 02:15:06,751 basehttp 28712 6237990912 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2025-08-11 02:15:06,754 basehttp 28712 6271643648 "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2025-08-11 02:15:06,755 basehttp 28712 6204338176 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2025-08-11 02:15:06,755 basehttp 28712 6254817280 "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2025-08-11 02:15:06,755 basehttp 28712 6288470016 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2025-08-11 02:15:06,756 basehttp 28712 6221164544 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-08-11 02:15:06,757 basehttp 28712 6237990912 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2025-08-11 02:15:06,758 basehttp 28712 6271643648 "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+INFO 2025-08-11 02:15:06,758 basehttp 28712 6204338176 "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2025-08-11 02:15:06,766 basehttp 28712 6204338176 "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+ERROR 2025-08-11 02:15:10,136 log 28712 6204338176 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/views.py", line 48, in handle_exception
+    return super().handle_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/views.py", line 37, in get
+    schema = self.schema_generator.get_schema(request, self.public)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/coreapi.py", line 158, in get_schema
+    links = self.get_links(None if public else request)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/coreapi.py", line 145, in get_links
+    link = view.schema.get_link(path, method, base_url=self.url)
+AttributeError: 'AutoSchema' object has no attribute 'get_link'
+ERROR 2025-08-11 02:15:10,136 basehttp 28712 6204338176 "GET /api/docs/ HTTP/1.1" 500 116388
+INFO 2025-08-11 02:15:12,070 basehttp 28712 6204338176 "GET /admin/ HTTP/1.1" 200 5157
+INFO 2025-08-11 02:16:52,337 basehttp 28712 6305296384 "GET /admin/accounts/customuser/ HTTP/1.1" 302 0
+INFO 2025-08-11 02:16:52,344 basehttp 28712 6305296384 "GET /admin/login/?next=/admin/accounts/customuser/ HTTP/1.1" 200 4221
+WARNING 2025-08-11 02:16:52,367 log 28712 6305296384 Not Found: /favicon.ico
+WARNING 2025-08-11 02:16:52,367 basehttp 28712 6305296384 "GET /favicon.ico HTTP/1.1" 404 3100
+INFO 2025-08-11 02:21:27,238 autoreload 28712 8457068736 /Users/oscarlucas/Documents/Proyecto_Licitacion/licitacion-backend/apps/users/admin.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2025 - 22:09:51
+Django version 4.2.23, using settings 'backend.settings_local'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+INFO 2025-08-11 02:21:27,553 autoreload 30709 8457068736 Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    autoreload.raise_last_exception()
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/utils/autoreload.py", line 86, in raise_last_exception
+    raise _exception[1]
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/management/__init__.py", line 394, in execute
+    autoreload.check_errors(django.setup)()
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/apps/registry.py", line 124, in populate
+    app_config.ready()
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/contrib/admin/apps.py", line 27, in ready
+    self.module.autodiscover()
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/contrib/admin/__init__.py", line 50, in autodiscover
+    autodiscover_modules("admin", register_to=site)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/utils/module_loading.py", line 58, in autodiscover_modules
+    import_module("%s.%s" % (app_config.name, module_to_search))
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/oscarlucas/Documents/Proyecto_Licitacion/licitacion-backend/apps/users/admin.py", line 4, in <module>
+    admin.site.register(User, UserAdmin)
+NameError: name 'User' is not defined
+INFO 2025-08-11 02:21:39,225 autoreload 30709 8457068736 /Users/oscarlucas/Documents/Proyecto_Licitacion/licitacion-backend/apps/users/admin.py changed, reloading.
+INFO 2025-08-11 02:21:39,588 autoreload 30716 8457068736 Watching for file changes with StatReloader
+INFO 2025-08-11 02:23:39,390 basehttp 30716 6191411200 "GET /admin/ HTTP/1.1" 200 5157
+INFO 2025-08-11 02:23:43,572 basehttp 30716 6191411200 "GET /admin/ HTTP/1.1" 200 5157
+INFO 2025-08-11 02:25:01,391 autoreload 30716 8457068736 /Users/oscarlucas/Documents/Proyecto_Licitacion/licitacion-backend/apps/users/admin.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 11, 2025 - 02:21:39
+Django version 4.2.23, using settings 'backend.settings_local'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+INFO 2025-08-11 02:25:01,635 autoreload 30841 8457068736 Watching for file changes with StatReloader
+INFO 2025-08-11 02:25:04,015 autoreload 30841 8457068736 /Users/oscarlucas/Documents/Proyecto_Licitacion/licitacion-backend/apps/users/admin.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 11, 2025 - 02:25:01
+Django version 4.2.23, using settings 'backend.settings_local'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+INFO 2025-08-11 02:25:04,239 autoreload 30845 8457068736 Watching for file changes with StatReloader
+INFO 2025-08-11 02:25:09,432 basehttp 30845 6129659904 "GET /admin/ HTTP/1.1" 200 5788
+INFO 2025-08-11 02:25:10,967 basehttp 30845 6129659904 "GET /admin/users/user/ HTTP/1.1" 200 11076
+INFO 2025-08-11 02:25:10,987 basehttp 30845 6129659904 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6566
+INFO 2025-08-11 02:25:10,988 basehttp 30845 6196965376 "GET /static/admin/js/core.js HTTP/1.1" 200 5682
+INFO 2025-08-11 02:25:10,990 basehttp 30845 6213791744 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+INFO 2025-08-11 02:25:10,991 basehttp 30845 6180139008 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-08-11 02:25:10,993 basehttp 30845 6129659904 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2025-08-11 02:25:10,994 basehttp 30845 6213791744 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-08-11 02:25:10,995 basehttp 30845 6146486272 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2025-08-11 02:25:10,995 basehttp 30845 6196965376 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-08-11 02:25:10,997 basehttp 30845 6129659904 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-08-11 02:25:10,997 basehttp 30845 6213791744 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-08-11 02:25:11,000 basehttp 30845 6163312640 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+INFO 2025-08-11 02:25:11,001 basehttp 30845 6180139008 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2025-08-11 02:25:11,002 basehttp 30845 6180139008 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-08-11 02:25:11,009 basehttp 30845 6180139008 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-08-11 02:25:11,009 basehttp 30845 6163312640 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-08-11 02:25:15,679 basehttp 30845 6163312640 "GET /admin/users/user/2/change/ HTTP/1.1" 200 21756
+INFO 2025-08-11 02:25:15,693 basehttp 30845 6196965376 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-08-11 02:25:15,693 basehttp 30845 6213791744 "GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+INFO 2025-08-11 02:25:15,694 basehttp 30845 6163312640 "GET /static/admin/css/forms.css HTTP/1.1" 200 9090
+INFO 2025-08-11 02:25:15,695 basehttp 30845 6129659904 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-08-11 02:25:15,696 basehttp 30845 6146486272 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15292
+INFO 2025-08-11 02:25:15,697 basehttp 30845 6180139008 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2025-08-11 02:25:15,697 basehttp 30845 6213791744 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-08-11 02:25:15,698 basehttp 30845 6163312640 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11921
+INFO 2025-08-11 02:25:15,699 basehttp 30845 6213791744 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-08-11 02:25:15,714 basehttp 30845 6163312640 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-08-11 02:25:15,715 basehttp 30845 6146486272 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-08-11 02:25:15,715 basehttp 30845 6180139008 "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+INFO 2025-08-11 02:25:15,715 basehttp 30845 6129659904 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-08-11 02:25:15,715 basehttp 30845 6213791744 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2025-08-11 02:25:20,571 basehttp 30845 6213791744 "GET /admin/users/user/ HTTP/1.1" 200 11076
+ERROR 2025-08-11 02:27:08,687 log 30845 6213791744 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/views.py", line 48, in handle_exception
+    return super().handle_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/views.py", line 37, in get
+    schema = self.schema_generator.get_schema(request, self.public)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/coreapi.py", line 158, in get_schema
+    links = self.get_links(None if public else request)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/coreapi.py", line 145, in get_links
+    link = view.schema.get_link(path, method, base_url=self.url)
+AttributeError: 'AutoSchema' object has no attribute 'get_link'
+ERROR 2025-08-11 02:27:08,692 basehttp 30845 6213791744 "GET /api/docs/ HTTP/1.1" 500 116388
+ERROR 2025-08-11 02:31:25,249 log 30845 6213791744 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/views.py", line 48, in handle_exception
+    return super().handle_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/views.py", line 37, in get
+    schema = self.schema_generator.get_schema(request, self.public)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/coreapi.py", line 158, in get_schema
+    links = self.get_links(None if public else request)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/coreapi.py", line 145, in get_links
+    link = view.schema.get_link(path, method, base_url=self.url)
+AttributeError: 'AutoSchema' object has no attribute 'get_link'
+ERROR 2025-08-11 02:31:25,250 basehttp 30845 6213791744 "GET /api/docs/ HTTP/1.1" 500 116388
+ERROR 2025-08-11 02:32:10,182 log 30845 6213791744 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/views.py", line 48, in handle_exception
+    return super().handle_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/views.py", line 37, in get
+    schema = self.schema_generator.get_schema(request, self.public)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/coreapi.py", line 158, in get_schema
+    links = self.get_links(None if public else request)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/schemas/coreapi.py", line 145, in get_links
+    link = view.schema.get_link(path, method, base_url=self.url)
+AttributeError: 'AutoSchema' object has no attribute 'get_link'
+ERROR 2025-08-11 02:32:10,183 basehttp 30845 6213791744 "GET /api/docs/ HTTP/1.1" 500 116388
+INFO 2025-08-11 02:33:59,003 autoreload 30845 8457068736 /Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/utils/json.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 11, 2025 - 02:25:04
+Django version 4.2.23, using settings 'backend.settings_local'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+INFO 2025-08-11 02:33:59,217 autoreload 31715 8457068736 Watching for file changes with StatReloader
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/utils.py", line 69, in __getitem__
+    return self._engines[alias]
+KeyError: 'django'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/backends/django.py", line 128, in get_package_libraries
+    module = import_module(entry[1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/templatetags/rest_framework.py", line 12, in <module>
+    from rest_framework.renderers import HTMLFormRenderer
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/renderers.py", line 17, in <module>
+    from django.http.multipartparser import parse_header
+ImportError: cannot import name 'parse_header' from 'django.http.multipartparser' (/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/http/multipartparser.py)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oscarlucas/Documents/Proyecto_Licitacion/licitacion-backend/manage.py", line 22, in <module>
+    main()
+  File "/Users/oscarlucas/Documents/Proyecto_Licitacion/licitacion-backend/manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/management/__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/management/base.py", line 412, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/management/commands/runserver.py", line 74, in execute
+    super().execute(*args, **options)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/management/base.py", line 458, in execute
+    output = self.handle(*args, **options)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/management/commands/runserver.py", line 111, in handle
+    self.run(**options)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/core/management/commands/runserver.py", line 118, in run
+    autoreload.run_with_reloader(self.inner_run, **options)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/utils/autoreload.py", line 670, in run_with_reloader
+    start_django(reloader, main_func, *args, **kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/utils/autoreload.py", line 659, in start_django
+    reloader.run(django_main_thread)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/utils/autoreload.py", line 342, in run
+    autoreload_started.send(sender=self)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/backends/django.py", line 128, in get_package_libraries
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/autoreload.py", line 43, in watch_for_template_changes
+    module = import_module(entry[1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    for directory in get_template_directories():
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/autoreload.py", line 16, in get_template_directories
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+    for backend in engines.all():
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/utils.py", line 94, in all
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+    return [self[alias] for alias in self]
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/utils.py", line 94, in <listcomp>
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+    return [self[alias] for alias in self]
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/utils.py", line 85, in __getitem__
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+    engine = engine_cls(params)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/backends/django.py", line 24, in __init__
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/templatetags/rest_framework.py", line 12, in <module>
+    options["libraries"] = self.get_templatetag_libraries(libraries)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/backends/django.py", line 42, in get_templatetag_libraries
+    from rest_framework.renderers import HTMLFormRenderer
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/rest_framework/renderers.py", line 17, in <module>
+    libraries = get_installed_libraries()
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/backends/django.py", line 116, in get_installed_libraries
+    from django.http.multipartparser import parse_header
+ImportError: cannot import name 'parse_header' from 'django.http.multipartparser' (/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/http/multipartparser.py)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    return {
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/backends/django.py", line 116, in <dictcomp>
+    return {
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/backends/django.py", line 105, in get_template_tag_modules
+    self.run()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/threading.py", line 910, in run
+    for name in get_package_libraries(pkg):
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/template/backends/django.py", line 130, in get_package_libraries
+    self._target(*self._args, **self._kwargs)
+  File "/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    raise InvalidTemplateLibrary(
+django.template.library.InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'rest_framework.templatetags.rest_framework': cannot import name 'parse_header' from 'django.http.multipartparser' (/Users/oscarlucas/Library/Python/3.9/lib/python/site-packages/django/http/multipartparser.py)

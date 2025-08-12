@@ -1,0 +1,113 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: >
+      sh -c "python manage.py migrate &&
+         (python manage.py createsuperuser --noinput --username=admin --email=admin@licitacion.com || true) &&
+         python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=backend.settings
+      - POSTGRES_DB=licitacion_db
+      - POSTGRES_USER=licitacion_user
+      - POSTGRES_PASSWORD=licitacion_pass
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-}
+      - AWS_BUCKET=${AWS_BUCKET:-licitacion-documents}
+      - OPENAI_API_KEY=your_openai_api_key
+      - DJANGO_SUPERUSER_USERNAME=admin
+      - DJANGO_SUPERUSER_EMAIL=admin@licitacion.com
+      - DJANGO_SUPERUSER_PASSWORD=licitacion123
+    depends_on:
+      - db
+      - redis
+    networks:
+      - licitacion-network
+
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_DB=licitacion_db
+      - POSTGRES_USER=licitacion_user
+      - POSTGRES_PASSWORD=licitacion_pass
+    ports:
+      - "5432:5432"
+    networks:
+      - licitacion-network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - licitacion-network
+
+  celery:
+    build: .
+    command: celery -A tasks.celery_app worker --loglevel=info
+    volumes:
+      - .:/app
+    environment:
+      - DJANGO_SETTINGS_MODULE=backend.settings
+      - POSTGRES_DB=licitacion_db
+      - POSTGRES_USER=licitacion_user
+      - POSTGRES_PASSWORD=licitacion_pass
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-}
+      - AWS_BUCKET=${AWS_BUCKET:-licitacion-documents}
+      - OPENAI_API_KEY=your_openai_api_key
+    depends_on:
+      - db
+      - redis
+    networks:
+      - licitacion-network
+
+  celery-beat:
+    build: .
+    command: celery -A tasks.celery_app beat --loglevel=info
+    volumes:
+      - .:/app
+    environment:
+      - DJANGO_SETTINGS_MODULE=backend.settings
+      - POSTGRES_DB=licitacion_db
+      - POSTGRES_USER=licitacion_user
+      - POSTGRES_PASSWORD=licitacion_pass
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-}
+      - AWS_BUCKET=${AWS_BUCKET:-licitacion-documents}
+      - OPENAI_API_KEY=your_openai_api_key
+    depends_on:
+      - db
+      - redis
+    networks:
+      - licitacion-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  licitacion-network:
+    driver: bridge
