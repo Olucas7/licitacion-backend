@@ -23,7 +23,6 @@ services:
   #     - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-}
   #     - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-}
   #     - AWS_BUCKET=${AWS_BUCKET:-licitacion-documents}
-  #     - OPENAI_API_KEY=OPENAI_API_KEY
   #     - DJANGO_SUPERUSER_USERNAME=admin
   #     - DJANGO_SUPERUSER_EMAIL=admin@licitacion.com
   #     - DJANGO_SUPERUSER_PASSWORD=licitacion123
@@ -73,7 +72,6 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-}
       - AWS_BUCKET=${AWS_BUCKET:-licitacion-documents}
-      - OPENAI_API_KEY=OPENAI_API_KEY
     depends_on:
       - db
       - redis
@@ -97,7 +95,6 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-}
       - AWS_BUCKET=${AWS_BUCKET:-licitacion-documents}
-      - OPENAI_API_KEY=OPENAI_API_KEY
     depends_on:
       - db
       - redis
