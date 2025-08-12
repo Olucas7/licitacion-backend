@@ -23,7 +23,7 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-}
       - AWS_BUCKET=${AWS_BUCKET:-licitacion-documents}
-      - OPENAI_API_KEY=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
+      - OPENAI_API_KEY=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
       - DJANGO_SUPERUSER_USERNAME=admin
       - DJANGO_SUPERUSER_EMAIL=admin@licitacion.com
       - DJANGO_SUPERUSER_PASSWORD=licitacion123
@@ -73,7 +73,7 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-}
       - AWS_BUCKET=${AWS_BUCKET:-licitacion-documents}
-      - OPENAI_API_KEY=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
+      - OPENAI_API_KEY=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
     depends_on:
       - db
       - redis
@@ -97,7 +97,7 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-}
       - AWS_BUCKET=${AWS_BUCKET:-licitacion-documents}
-      - OPENAI_API_KEY=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
+      - OPENAI_API_KEY=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
     depends_on:
       - db
       - redis

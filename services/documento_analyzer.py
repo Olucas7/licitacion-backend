@@ -13,23 +13,29 @@ class DocumentoAnalyzer:
         
         REQUISITOS DEL PLIEGO:
         {self.pliego.requisitos_tecnicos}
+
+        DOCUMENTOS OBLIGATORIOS:
+        {self.pliego.documentos_obligatorios}
+
+        CRITERIOS EVALUACION:
+        {self.pliego.criterios_evaluacion}
         
         DOCUMENTO:
         {texto[:10000]}
         
         Devuelve JSON con:
-        - cumplimiento_porcentaje (0-100)
-        - cumplimiento_requisitos (lista)
-        - faltantes (lista)
-        - monto_ofertado (float)
-        - observaciones (texto)
-        - riesgos (lista)
+        - precio (cantidad dolares)
+        - ⁠ruc (identificador unico de la empresa)
+        - precio_propuesto (float)
+        - plazo (numero de días)
+        - tiempo_experiencia (numero de años)
+        - tiempo_garantia (numero de años)
         """
         
         response = openai.ChatCompletion.create(
-            model="gpt-4-1106-preview",
+            model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content": "Eres un analista de ofertas de licitación"},
+                {"role": "system", "content": "Eres un analista de ofertas de licitación de la industria de construcción"},
                 {"role": "user", "content": prompt}
             ],
             response_format={"type": "json_object"}

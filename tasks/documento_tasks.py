@@ -1,10 +1,11 @@
 from celery import shared_task
-from apps.documentos.models import Documento
+from apps.documents.models import Documento
 from services.documento_analyzer import DocumentoAnalyzer
 import PyPDF2
+from django.utils import timezone
 
-@shared_task(bind=True, max_retries=3)
-def analizar_documento_async(self, documento_id):
+@shared_task
+def analizar_documento_async(documento_id):
     documento = Documento.objects.get(id=documento_id)
     documento.estado = 'PROCESANDO'
     documento.save()
@@ -26,4 +27,8 @@ def analizar_documento_async(self, documento_id):
     except Exception as e:
         documento.estado = 'ERROR'
         documento.save()
-        self.retry(exc=e, countdown=60)
+
+def extraer_texto_pdf(ruta):
+    with open(ruta, 'rb') as f:
+        pdf = PyPDF2.PdfReader(f)
+        return "\n".join([page.extract_text() for page in pdf.pages])

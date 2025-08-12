@@ -22,7 +22,7 @@ class PliegoAnalyzer:
         """
         
         response = openai.ChatCompletion.create(
-            model="gpt-4-1106-preview",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "Eres un experto en extraer información de pliegos de licitación"},
                 {"role": "user", "content": prompt}

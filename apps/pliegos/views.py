@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from .models import Pliego
 from .serializers import PliegoSerializer
 from tasks.pliego_tasks import procesar_pliego_async
+from tasks.documento_tasks import analizar_documento_async
 
 class PliegoViewSet(viewsets.ModelViewSet):
     queryset = Pliego.objects.all()
@@ -25,10 +26,15 @@ class PliegoViewSet(viewsets.ModelViewSet):
                 nombre_original=archivo.name
             )
             documentos.append(doc)
-            from tasks.documento_tasks import analizar_documento_async
             analizar_documento_async.delay(str(doc.id))
         
         return Response({
             'mensaje': f'{len(documentos)} documentos subidos para análisis',
-            'documentos': documentos
+            'documentos': [
+                {
+                    'id': str(doc.id),
+                    'nombre_original': doc.nombre_original,
+                }
+                for doc in documentos
+            ]
         }, status=status.HTTP_201_CREATED)
